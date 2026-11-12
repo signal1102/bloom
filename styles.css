@@ -1,0 +1,1157 @@
+
+/* Imports the fonts used throughout the website. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+/* Defines the reusable design colours and fonts. */
+:root {
+    --dark: #211b19; /* Main dark background. */
+    --dark-soft: #302724; /* Secondary dark background. */
+    --cream: #f5f0e9; /* Main light background. */
+    --white: #fffdf9; /* White surface colour. */
+    --burgundy: #914b50; /* Main accent colour. */
+    --peach: #d6a89c; /* Secondary accent colour. */
+    --muted: #968982; /* Muted text colour. */
+    --line: #ded4ca; /* Light border colour. */
+    --serif: 'Playfair Display', serif; /* Editorial heading font. */
+    --sans: 'DM Sans', sans-serif; /* Body font. */
+}
+
+/* Removes default spacing and makes element sizing predictable. */
+* {
+    margin: 0; /* Removes browser default margins. */
+    padding: 0; /* Removes browser default padding. */
+    box-sizing: border-box; /* Includes padding and borders in element dimensions. */
+}
+
+/* Enables smooth movement between page sections. */
+html {
+    scroll-behavior: smooth; /* Animates anchor navigation. */
+    scroll-padding-top: 85px; /* Prevents sticky header overlap. */
+}
+
+/* Sets the website's general appearance. */
+body {
+    background: var(--cream); /* Applies the cream background. */
+    color: var(--dark); /* Sets default text colour. */
+    font-family: var(--sans); /* Uses the sans-serif body font. */
+    line-height: 1.7; /* Improves readability. */
+    overflow-x: hidden; /* Prevents horizontal scrolling. */
+}
+
+/* Removes default link decoration. */
+a {
+    text-decoration: none; /* Removes underlines. */
+    color: inherit; /* Inherits surrounding text colour. */
+}
+
+/* Makes images behave consistently. */
+img {
+    display: block; /* Removes unwanted inline image spacing. */
+    width: 100%; /* Makes images fill their containers. */
+    height: 100%; /* Makes images fill container height. */
+    object-fit: cover; /* Prevents image distortion. */
+}
+
+/* Styles the announcement strip. */
+.top-bar {
+    background: var(--burgundy); /* Applies the burgundy background. */
+    color: var(--white); /* Makes text light. */
+    text-align: center; /* Centres the announcement. */
+    padding: 9px 15px; /* Adds internal spacing. */
+    font-size: 9px; /* Sets small text size. */
+    letter-spacing: 1.7px; /* Adds editorial character. */
+}
+
+/* Arranges the main header. */
+.header {
+    height: 88px; /* Defines header height. */
+    padding: 0 6%; /* Adds horizontal spacing. */
+    display: flex; /* Activates Flexbox. */
+    align-items: center; /* Vertically centres content. */
+    justify-content: space-between; /* Distributes content. */
+    background: var(--dark); /* Creates a dark navigation bar. */
+    color: var(--cream); /* Makes navigation text light. */
+    position: sticky; /* Keeps the header visible during scrolling. */
+    top: 0; /* Pins header to the top. */
+    z-index: 100; /* Keeps header above page content. */
+}
+
+/* Styles the main brand logo. */
+.brand {
+    font-family: var(--serif); /* Uses the decorative serif font. */
+    font-size: 30px; /* Sets the logo size. */
+    letter-spacing: -1px; /* Tightens the logo lettering. */
+    line-height: 1; /* Keeps logo height compact. */
+}
+
+/* Styles the registered mark. */
+.brand span {
+    color: var(--peach); /* Highlights the symbol. */
+    font-size: 12px; /* Reduces symbol size. */
+    vertical-align: top; /* Positions the symbol higher. */
+}
+
+/* Styles the small brand descriptor. */
+.brand small {
+    display: block; /* Moves the descriptor onto a new line. */
+    font-family: var(--sans); /* Uses the body font. */
+    font-size: 7px; /* Keeps descriptor small. */
+    letter-spacing: 2px; /* Creates spaced lettering. */
+    margin-top: 6px; /* Separates it from the logo. */
+}
+
+/* Arranges navigation links. */
+.nav {
+    display: flex; /* Places links horizontally. */
+    gap: 28px; /* Adds spacing between links. */
+    align-items: center; /* Vertically aligns links. */
+}
+
+/* Styles individual navigation links. */
+.nav a {
+    font-size: 9px; /* Sets compact navigation text. */
+    letter-spacing: 1px; /* Adds character spacing. */
+    color: #c9bdb6; /* Uses muted light text. */
+    transition: color 0.3s ease; /* Smooths hover changes. */
+}
+
+/* Highlights navigation links on hover. */
+.nav a:hover {
+    color: var(--peach); /* Changes link colour. */
+}
+
+/* Styles the header action link. */
+.nav-cta {
+    font-size: 9px; /* Sets compact text. */
+    letter-spacing: 1px; /* Adds spacing. */
+    border: 1px solid #71615b; /* Adds an outline. */
+    padding: 12px 16px; /* Creates clickable space. */
+}
+
+/* Colours the arrow in the header action. */
+.nav-cta span {
+    color: var(--peach); /* Highlights the arrow. */
+    margin-left: 8px; /* Separates the arrow from the text. */
+}
+
+/* Hides the mobile menu button on desktop. */
+.menu-button {
+    display: none; /* Only appears on mobile. */
+}
+
+/* Creates the large campaign hero. */
+.hero {
+    min-height: 690px; /* Gives the hero a large visual presence. */
+    position: relative; /* Allows overlay elements to be positioned inside. */
+    display: flex; /* Activates Flexbox. */
+    align-items: center; /* Vertically centres the main content. */
+    padding: 100px 9%; /* Creates generous internal spacing. */
+    color: var(--white); /* Makes text visible over the image. */
+    overflow: hidden; /* Hides image overflow. */
+}
+
+/* Positions the hero background image. */
+.hero-background {
+    position: absolute; /* Removes image from normal document flow. */
+    inset: 0; /* Stretches it across the entire hero. */
+    z-index: 0; /* Places it behind other hero content. */
+}
+
+/* Creates a dark image overlay. */
+.hero-overlay {
+    position: absolute; /* Covers the background image. */
+    inset: 0; /* Stretches across the hero. */
+    background: linear-gradient(90deg, rgba(22,16,15,.82), rgba(22,16,15,.12)); /* Improves text contrast. */
+    z-index: 1; /* Places overlay above the image. */
+}
+
+/* Places the top editorial details. */
+.hero-topline {
+    position: absolute; /* Positions the details independently. */
+    top: 30px; /* Sets distance from top. */
+    left: 6%; /* Sets distance from left. */
+    right: 6%; /* Sets distance from right. */
+    display: flex; /* Places the labels in one row. */
+    justify-content: space-between; /* Separates the labels. */
+    z-index: 2; /* Keeps them above the overlay. */
+    font-size: 9px; /* Sets small label size. */
+    letter-spacing: 2px; /* Adds editorial spacing. */
+}
+
+/* Styles the main hero text block. */
+.hero-content {
+    position: relative; /* Establishes a stacking position. */
+    z-index: 2; /* Places text above image and overlay. */
+    max-width: 650px; /* Controls text width. */
+}
+
+/* Styles the hero introductory label. */
+.hero-label {
+    font-size: 10px; /* Keeps the label small. */
+    letter-spacing: 3px; /* Adds character spacing. */
+    color: var(--peach); /* Uses the peach accent. */
+    margin-bottom: 22px; /* Separates it from the heading. */
+}
+
+/* Styles the main campaign heading. */
+.hero h1 {
+    font-family: var(--serif); /* Uses the display font. */
+    font-size: clamp(58px, 8vw, 105px); /* Adapts heading size to viewport width. */
+    font-weight: 400; /* Keeps the heading elegant. */
+    line-height: 1.02; /* Controls line spacing. */
+    letter-spacing: -3px; /* Tightens the heading. */
+}
+
+/* Highlights italic text in headings. */
+.hero h1 em,
+.intro h2 span,
+.section-heading h2 em,
+.featured h2 em,
+.philosophy h2 em,
+.journal h2 em,
+.contact h2 em {
+    color: var(--peach); /* Applies the accent colour. */
+    font-weight: 400; /* Prevents heavy italic text. */
+}
+
+/* Styles the hero description. */
+.hero-description {
+    max-width: 390px; /* Limits paragraph width. */
+    font-size: 13px; /* Sets readable text size. */
+    color: #ded3cd; /* Uses muted light text. */
+    margin-top: 25px; /* Separates it from heading. */
+}
+
+/* Styles the hero button. */
+.hero-button {
+    display: inline-flex; /* Allows text and arrow alignment. */
+    gap: 25px; /* Separates text from arrow. */
+    align-items: center; /* Vertically centres contents. */
+    background: var(--cream); /* Creates a light button. */
+    color: var(--dark); /* Makes button text dark. */
+    padding: 17px 23px; /* Adds clickable space. */
+    margin-top: 35px; /* Separates button from description. */
+    font-size: 9px; /* Sets compact text. */
+    letter-spacing: 1px; /* Adds character spacing. */
+    transition: background .3s ease, color .3s ease; /* Smooths hover changes. */
+}
+
+/* Adds a hover effect to the hero button. */
+.hero-button:hover {
+    background: var(--burgundy); /* Changes button background. */
+    color: white; /* Changes text colour. */
+}
+
+/* Positions bottom hero information. */
+.hero-bottomline {
+    position: absolute; /* Positions content at hero bottom. */
+    bottom: 25px; /* Sets distance from bottom. */
+    left: 6%; /* Sets left spacing. */
+    right: 6%; /* Sets right spacing. */
+    display: flex; /* Arranges labels horizontally. */
+    justify-content: space-between; /* Separates labels. */
+    font-size: 9px; /* Sets small text. */
+    letter-spacing: 2px; /* Adds character spacing. */
+    z-index: 2; /* Places content above overlay. */
+}
+
+/* Styles the introduction section. */
+.intro {
+    padding: 115px 15%; /* Creates generous spacing. */
+    text-align: center; /* Centres the content. */
+    background: var(--cream); /* Applies light background. */
+}
+
+/* Creates consistent section numbering. */
+.section-index {
+    color: var(--burgundy); /* Uses accent colour. */
+    font-size: 9px; /* Sets small text. */
+    letter-spacing: 2px; /* Adds editorial spacing. */
+    font-weight: 600; /* Makes labels noticeable. */
+    margin-bottom: 25px; /* Separates label from heading. */
+}
+
+/* Styles the introduction heading. */
+.intro h2 {
+    font-family: var(--serif); /* Uses display font. */
+    font-size: clamp(35px, 5vw, 58px); /* Makes heading responsive. */
+    font-weight: 400; /* Keeps heading light. */
+    line-height: 1.3; /* Controls line spacing. */
+}
+
+/* Styles the introduction paragraph. */
+.intro p:last-child {
+    max-width: 520px; /* Limits line length. */
+    margin: 25px auto 0; /* Centres paragraph and adds spacing. */
+    color: var(--muted); /* Uses muted text. */
+    font-size: 13px; /* Sets body text size. */
+}
+
+/* Styles the collection section. */
+.collections {
+    padding: 90px 7%; /* Adds section spacing. */
+    background: var(--white); /* Creates a bright section. */
+}
+
+/* Arranges the collection heading. */
+.section-heading,
+.journal-heading {
+    display: flex; /* Places heading and supporting text side by side. */
+    justify-content: space-between; /* Pushes content apart. */
+    align-items: end; /* Aligns elements at the bottom. */
+    gap: 30px; /* Prevents elements from touching. */
+    margin-bottom: 45px; /* Separates heading from gallery. */
+}
+
+/* Styles collection and journal headings. */
+.section-heading h2,
+.journal-heading h2 {
+    font-family: var(--serif); /* Uses the display font. */
+    font-size: clamp(38px, 5vw, 60px); /* Makes headings responsive. */
+    font-weight: 400; /* Keeps heading elegant. */
+    line-height: 1.1; /* Controls line spacing. */
+}
+
+/* Styles supporting text beside headings. */
+.section-heading > p,
+.journal-heading > p {
+    font-size: 12px; /* Sets small paragraph text. */
+    color: var(--muted); /* Uses secondary text colour. */
+}
+
+/* Creates an asymmetric collection layout. */
+.category-grid {
+    display: grid; /* Activates CSS Grid. */
+    grid-template-columns: 1.25fr 1fr; /* Creates an unequal two-column layout. */
+    grid-template-rows: 310px 310px; /* Creates two rows. */
+    gap: 20px; /* Separates category tiles. */
+}
+
+/* Styles individual category cards. */
+.category-card {
+    position: relative; /* Allows overlay content to be positioned. */
+    overflow: hidden; /* Hides image overflow. */
+    background: #d8c5b9; /* Provides a fallback background. */
+    color: white; /* Makes overlay text light. */
+}
+
+/* Makes the first category card span both rows. */
+.category-large {
+    grid-row: 1 / 3; /* Extends the card across both grid rows. */
+}
+
+/* Styles category images. */
+.category-card img {
+    transition: transform .7s ease; /* Smooths image zoom. */
+}
+
+/* Zooms images when cards are hovered. */
+.category-card:hover img {
+    transform: scale(1.06); /* Creates a subtle zoom effect. */
+}
+
+/* Creates a gradient over category images. */
+.category-card::after {
+    content: ""; /* Creates a decorative pseudo-element. */
+    position: absolute; /* Covers the image. */
+    inset: 0; /* Stretches across the card. */
+    background: linear-gradient(transparent 35%, rgba(20,15,14,.72)); /* Improves text readability. */
+}
+
+/* Positions category information. */
+.category-overlay {
+    position: absolute; /* Positions information over the image. */
+    bottom: 25px; /* Places text near the bottom. */
+    left: 27px; /* Adds left spacing. */
+    z-index: 2; /* Places text above the gradient. */
+}
+
+/* Styles category labels. */
+.category-overlay span {
+    font-size: 9px; /* Keeps label small. */
+    letter-spacing: 2px; /* Adds spacing. */
+}
+
+/* Styles category headings. */
+.category-overlay h3 {
+    font-family: var(--serif); /* Uses display font. */
+    font-size: 35px; /* Creates prominent category text. */
+    font-weight: 400; /* Keeps text elegant. */
+    line-height: 1.2; /* Controls spacing. */
+    margin: 8px 0; /* Separates heading from surrounding text. */
+}
+
+/* Styles category links. */
+.category-overlay p {
+    font-size: 9px; /* Sets small text. */
+    letter-spacing: 1.5px; /* Adds editorial spacing. */
+}
+
+/* Creates the featured product layout. */
+.featured {
+    padding: 110px 10%; /* Adds generous spacing. */
+    display: grid; /* Activates CSS Grid. */
+    grid-template-columns: 1fr 0.85fr; /* Creates image and content columns. */
+    align-items: center; /* Vertically aligns columns. */
+    gap: 90px; /* Separates image and text. */
+    background: #eee5dc; /* Applies a warm background. */
+}
+
+/* Positions the featured image. */
+.featured-image {
+    height: 510px; /* Sets image height. */
+    position: relative; /* Allows decorative stamp positioning. */
+}
+
+/* Creates a decorative stamp. */
+.featured-stamp {
+    position: absolute; /* Positions the stamp over the image. */
+    right: -25px; /* Moves it slightly beyond the image edge. */
+    bottom: 35px; /* Sets bottom spacing. */
+    width: 95px; /* Defines stamp width. */
+    height: 95px; /* Defines stamp height. */
+    border-radius: 50%; /* Makes the stamp circular. */
+    background: var(--burgundy); /* Applies accent background. */
+    color: white; /* Makes stamp text light. */
+    display: flex; /* Enables text alignment. */
+    align-items: center; /* Vertically centres stamp text. */
+    justify-content: center; /* Horizontally centres stamp text. */
+    text-align: center; /* Centres multiple lines. */
+    font-size: 9px; /* Sets small text. */
+    line-height: 1.5; /* Controls line spacing. */
+    letter-spacing: 1px; /* Adds spacing. */
+}
+
+/* Styles featured content. */
+.featured-content {
+    max-width: 440px; /* Prevents content from becoming too wide. */
+}
+
+/* Styles the featured category label. */
+.featured-category {
+    font-size: 9px; /* Sets small label text. */
+    letter-spacing: 2px; /* Adds character spacing. */
+    color: var(--burgundy); /* Uses accent colour. */
+    margin-bottom: 15px; /* Separates it from heading. */
+}
+
+/* Styles the featured heading. */
+.featured h2 {
+    font-family: var(--serif); /* Uses display font. */
+    font-size: clamp(40px, 5vw, 61px); /* Makes heading responsive. */
+    font-weight: 400; /* Keeps heading elegant. */
+    line-height: 1.12; /* Controls line spacing. */
+}
+
+/* Styles featured product description. */
+.featured-description {
+    color: var(--muted); /* Uses secondary text colour. */
+    font-size: 13px; /* Sets body text size. */
+    margin-top: 25px; /* Separates description from heading. */
+}
+
+/* Arranges featured product name and price. */
+.featured-price {
+    display: flex; /* Places name and price on one line. */
+    justify-content: space-between; /* Pushes them apart. */
+    border-top: 1px solid #d2c5bb; /* Adds a top separator. */
+    border-bottom: 1px solid #d2c5bb; /* Adds a bottom separator. */
+    padding: 18px 0; /* Adds vertical spacing. */
+    margin: 30px 0; /* Separates pricing from other content. */
+    font-size: 10px; /* Sets compact text. */
+    letter-spacing: 1px; /* Adds character spacing. */
+}
+
+/* Styles the product price. */
+.featured-price strong {
+    font-size: 13px; /* Makes the price more prominent. */
+}
+
+/* Styles the featured product action. */
+.dark-button {
+    display: inline-block; /* Allows padding and margins. */
+    background: var(--dark); /* Applies dark background. */
+    color: white; /* Makes text light. */
+    padding: 17px 23px; /* Adds internal spacing. */
+    font-size: 9px; /* Sets button text size. */
+    letter-spacing: 1px; /* Adds spacing. */
+    transition: background .3s ease; /* Smooths hover transition. */
+}
+
+/* Changes featured action on hover. */
+.dark-button:hover {
+    background: var(--burgundy); /* Changes button background. */
+}
+
+/* Styles the small featured product note. */
+.product-note {
+    color: var(--muted); /* Uses muted text. */
+    font-size: 8px; /* Keeps text small. */
+    letter-spacing: 1.5px; /* Adds spacing. */
+    margin-top: 20px; /* Separates note from button. */
+}
+
+/* Creates the philosophy section layout. */
+.philosophy {
+    display: grid; /* Activates CSS Grid. */
+    grid-template-columns: 1fr 1fr; /* Creates two equal columns. */
+    min-height: 600px; /* Gives the section sufficient height. */
+    background: var(--cream); /* Applies cream background. */
+}
+
+/* Controls philosophy image height. */
+.philosophy-image {
+    min-height: 600px; /* Matches the section's minimum height. */
+}
+
+/* Vertically centres philosophy text. */
+.philosophy-content {
+    align-self: center; /* Centres content vertically in its grid cell. */
+    padding: 75px 12%; /* Adds internal spacing. */
+}
+
+/* Styles the philosophy heading. */
+.philosophy h2 {
+    font-family: var(--serif); /* Uses display font. */
+    font-size: clamp(37px, 4vw, 53px); /* Makes heading responsive. */
+    font-weight: 400; /* Keeps heading light. */
+    line-height: 1.2; /* Controls line spacing. */
+}
+
+/* Styles philosophy paragraphs. */
+.philosophy-content > p:not(.section-index) {
+    color: var(--muted); /* Uses secondary text colour. */
+    font-size: 12px; /* Sets body text size. */
+    margin-top: 22px; /* Separates paragraphs. */
+}
+
+/* Styles philosophy contact link. */
+.underlined-link {
+    display: inline-block; /* Allows margin and padding. */
+    border-bottom: 1px solid var(--burgundy); /* Adds underline. */
+    padding-bottom: 5px; /* Separates text from underline. */
+    font-size: 9px; /* Sets small text. */
+    letter-spacing: 1.5px; /* Adds spacing. */
+    margin-top: 30px; /* Separates link from paragraphs. */
+}
+
+/* Styles the journal section. */
+.journal {
+    padding: 110px 7%; /* Adds section spacing. */
+    background: var(--white); /* Applies white background. */
+}
+
+/* Creates three editorial columns. */
+.journal-grid {
+    display: grid; /* Activates CSS Grid. */
+    grid-template-columns: repeat(3, 1fr); /* Creates three equal columns. */
+    gap: 25px; /* Separates journal cards. */
+}
+
+/* Controls journal image dimensions. */
+.journal-image {
+    height: 270px; /* Sets consistent image height. */
+    overflow: hidden; /* Hides image overflow. */
+    background: #eee5dc; /* Provides fallback background. */
+}
+
+/* Adds a gentle journal image hover effect. */
+.journal-image img {
+    transition: transform .5s ease; /* Smooths image zoom. */
+}
+
+/* Enlarges journal image on hover. */
+.journal-card:hover img {
+    transform: scale(1.05); /* Creates subtle zoom. */
+}
+
+/* Styles journal metadata. */
+.journal-meta {
+    font-size: 8px; /* Sets compact text. */
+    letter-spacing: 1.5px; /* Adds spacing. */
+    color: var(--burgundy); /* Uses accent colour. */
+    margin-top: 20px; /* Separates metadata from image. */
+}
+
+/* Styles journal headings. */
+.journal-card h3 {
+    font-family: var(--serif); /* Uses display font. */
+    font-size: 22px; /* Sets editorial heading size. */
+    font-weight: 400; /* Keeps heading light. */
+    line-height: 1.35; /* Controls line spacing. */
+    margin: 12px 0 18px; /* Separates heading from surrounding elements. */
+}
+
+/* Styles journal article links. */
+.journal-card > a {
+    font-size: 9px; /* Sets small link text. */
+    letter-spacing: 1px; /* Adds spacing. */
+    border-bottom: 1px solid var(--peach); /* Adds subtle underline. */
+    padding-bottom: 5px; /* Separates underline from text. */
+}
+
+/* Creates the contact section. */
+.contact {
+    background: var(--dark); /* Applies dark background. */
+    color: var(--cream); /* Makes text light. */
+    display: grid; /* Activates CSS Grid. */
+    grid-template-columns: 0.9fr 1fr; /* Creates two columns. */
+    gap: 100px; /* Separates introduction and form. */
+    padding: 110px 10%; /* Adds internal spacing. */
+}
+
+/* Styles the contact heading. */
+.contact h2 {
+    font-family: var(--serif); /* Uses display font. */
+    font-size: clamp(42px, 5vw, 64px); /* Makes heading responsive. */
+    font-weight: 400; /* Keeps heading elegant. */
+    line-height: 1.15; /* Controls line spacing. */
+}
+
+/* Styles contact introduction paragraph. */
+.contact-heading > p:not(.section-index) {
+    color: #c0b2aa; /* Uses muted light text. */
+    font-size: 12px; /* Sets body text size. */
+    max-width: 330px; /* Controls paragraph width. */
+    margin-top: 25px; /* Separates it from heading. */
+}
+
+/* Styles the contact email link. */
+.contact-heading > a {
+    display: inline-block; /* Allows spacing adjustments. */
+    color: var(--peach); /* Highlights email address. */
+    font-size: 9px; /* Sets small text. */
+    letter-spacing: 1px; /* Adds character spacing. */
+    margin-top: 35px; /* Separates email from paragraph. */
+}
+
+/* Arranges form fields vertically. */
+.contact-form {
+    display: flex; /* Activates Flexbox. */
+    flex-direction: column; /* Stacks form elements. */
+    gap: 25px; /* Separates fields. */
+}
+
+/* Creates a two-column input row. */
+.input-row {
+    display: grid; /* Activates CSS Grid. */
+    grid-template-columns: 1fr 1fr; /* Creates two equal columns. */
+    gap: 25px; /* Separates name and email fields. */
+}
+
+/* Groups labels and input elements. */
+.field {
+    display: flex; /* Activates Flexbox. */
+    flex-direction: column; /* Stacks label and input. */
+    gap: 10px; /* Separates label from field. */
+}
+
+/* Styles form labels. */
+.field label {
+    font-size: 9px; /* Sets small label text. */
+    letter-spacing: 1.5px; /* Adds character spacing. */
+    color: var(--peach); /* Highlights labels. */
+}
+
+/* Styles input and textarea fields. */
+.field input,
+.field textarea {
+    background: transparent; /* Keeps the dark section visible. */
+    border: none; /* Removes default borders. */
+    border-bottom: 1px solid #62534d; /* Adds subtle field underline. */
+    padding: 12px 0; /* Adds internal spacing. */
+    font-family: var(--sans); /* Uses website body font. */
+    font-size: 12px; /* Sets text size. */
+    color: white; /* Makes entered text light. */
+    outline: none; /* Removes default browser outline. */
+    border-radius: 0; /* Removes default rounded field corners. */
+}
+
+/* Highlights selected form fields. */
+.field input:focus,
+.field textarea:focus {
+    border-bottom-color: var(--peach); /* Highlights active field. */
+}
+
+/* Styles form placeholders. */
+.field input::placeholder,
+.field textarea::placeholder {
+    color: #8f817a; /* Makes placeholder text muted. */
+}
+
+/* Prevents horizontal resizing of the message area. */
+.field textarea {
+    resize: vertical; /* Allows vertical resizing only. */
+}
+
+/* Styles the submit button. */
+.submit-button {
+    align-self: flex-start; /* Keeps button aligned to the left. */
+    padding: 16px 24px; /* Creates a comfortable button area. */
+    border: none; /* Removes default border. */
+    background: var(--peach); /* Applies peach background. */
+    color: var(--dark); /* Makes text dark. */
+    font-size: 9px; /* Sets compact text. */
+    letter-spacing: 1px; /* Adds spacing. */
+    cursor: pointer; /* Shows clickable behaviour. */
+    transition: background .3s ease; /* Smooths hover effect. */
+}
+
+/* Changes submit button appearance on hover. */
+.submit-button:hover {
+    background: white; /* Changes background to white. */
+}
+
+/* Separates arrow from button text. */
+.submit-button span {
+    margin-left: 15px; /* Adds spacing. */
+}
+
+/* Styles contact form feedback. */
+.form-feedback {
+    font-size: 11px; /* Sets feedback text size. */
+    color: var(--peach); /* Highlights feedback. */
+    min-height: 20px; /* Reserves space for messages. */
+}
+
+/* Styles the footer. */
+.footer {
+    background: #171211; /* Creates a darker footer background. */
+    color: var(--cream); /* Makes footer text light. */
+    padding: 40px 7% 20px; /* Adds internal spacing. */
+}
+
+/* Arranges the top footer row. */
+.footer-top {
+    display: flex; /* Places footer elements in a row. */
+    justify-content: space-between; /* Distributes elements. */
+    align-items: center; /* Vertically aligns elements. */
+    gap: 20px; /* Prevents elements from touching. */
+}
+
+/* Styles footer brand logo. */
+.footer-brand {
+    font-family: var(--serif); /* Uses decorative font. */
+    font-size: 27px; /* Sets logo size. */
+}
+
+/* Styles footer brand symbol. */
+.footer-brand span {
+    color: var(--peach); /* Highlights symbol. */
+}
+
+/* Styles footer text. */
+.footer-top p,
+.footer-top > a:last-child {
+    font-size: 8px; /* Sets compact footer text. */
+    letter-spacing: 1.5px; /* Adds spacing. */
+    color: #b9aaa2; /* Uses muted colour. */
+}
+
+/* Creates footer copyright row. */
+.footer-bottom {
+    border-top: 1px solid #413532; /* Adds a separator. */
+    margin-top: 35px; /* Separates copyright from footer top. */
+    padding-top: 20px; /* Adds space beneath separator. */
+    display: flex; /* Arranges copyright details horizontally. */
+    justify-content: space-between; /* Separates the two items. */
+    gap: 15px; /* Adds spacing when items wrap. */
+    font-size: 8px; /* Sets small text. */
+    color: #94857d; /* Uses muted footer colour. */
+}
+
+/* Tablet adjustments. */
+@media (max-width: 950px) {
+
+    /* Reduces navigation spacing. */
+    .nav {
+        gap: 15px; /* Fits links into smaller width. */
+    }
+
+    /* Reduces featured section spacing. */
+    .featured {
+        gap: 45px; /* Brings image and text closer. */
+        padding-left: 7%; /* Reduces left padding. */
+        padding-right: 7%; /* Reduces right padding. */
+    }
+
+    /* Reduces contact section gap. */
+    .contact {
+        gap: 50px; /* Brings form and introduction closer. */
+    }
+
+    /* Reduces journal image height. */
+    .journal-image {
+        height: 220px; /* Fits tablet proportions. */
+    }
+}
+
+/* Mobile and small tablet layout. */
+@media (max-width: 700px) {
+
+    /* Reduces header height. */
+    .header {
+        height: 75px; /* Creates a compact mobile header. */
+        padding: 0 6%; /* Adds mobile side spacing. */
+    }
+
+    /* Reduces brand logo size. */
+    .brand {
+        font-size: 26px; /* Keeps logo proportionate. */
+    }
+
+    /* Displays mobile navigation button. */
+    .menu-button {
+        display: flex; /* Makes button visible. */
+        flex-direction: column; /* Stacks the lines. */
+        gap: 6px; /* Separates the lines. */
+        background: none; /* Removes default background. */
+        border: none; /* Removes default border. */
+        cursor: pointer; /* Shows clickable behaviour. */
+        padding: 10px; /* Enlarges the touch area. */
+    }
+
+    /* Styles the two mobile menu lines. */
+    .menu-button span {
+        width: 25px; /* Sets line width. */
+        height: 2px; /* Sets line thickness. */
+        background: white; /* Makes lines visible. */
+    }
+
+    /* Creates the hidden mobile navigation panel. */
+    .nav {
+        display: none; /* Hides menu by default. */
+        position: absolute; /* Positions menu below header. */
+        top: 75px; /* Aligns with header bottom. */
+        left: 0; /* Aligns to viewport left. */
+        width: 100%; /* Fills screen width. */
+        background: var(--dark); /* Uses dark background. */
+        padding: 30px 7%; /* Adds internal spacing. */
+        flex-direction: column; /* Stacks links vertically. */
+        align-items: flex-start; /* Aligns links left. */
+        gap: 25px; /* Separates links. */
+        border-top: 1px solid #4c3c37; /* Adds top separator. */
+    }
+
+    /* Displays the navigation when JavaScript activates it. */
+    .nav.active {
+        display: flex; /* Makes the menu visible. */
+    }
+
+    /* Hides desktop action link on mobile. */
+    .nav-cta {
+        display: none; /* Saves header space. */
+    }
+
+    /* Reduces hero height and padding. */
+    .hero {
+        min-height: 650px; /* Keeps the hero visually substantial. */
+        padding: 80px 7%; /* Adjusts mobile spacing. */
+    }
+
+    /* Adjusts the hero heading. */
+    .hero h1 {
+        font-size: clamp(54px, 12vw, 78px); /* Fits mobile width. */
+        letter-spacing: -2px; /* Reduces tightness. */
+    }
+
+    /* Adjusts top hero information. */
+    .hero-topline {
+        top: 20px; /* Reduces top spacing. */
+        font-size: 7px; /* Reduces text size. */
+    }
+
+    /* Adjusts bottom hero information. */
+    .hero-bottomline {
+        bottom: 20px; /* Reduces bottom spacing. */
+        font-size: 7px; /* Reduces text size. */
+    }
+
+    /* Reduces introduction spacing. */
+    .intro {
+        padding: 85px 8%; /* Adapts to phone screens. */
+    }
+
+    /* Reduces collection spacing. */
+    .collections,
+    .journal {
+        padding: 75px 6%; /* Creates mobile-friendly spacing. */
+    }
+
+    /* Stacks collection heading content. */
+    .section-heading,
+    .journal-heading {
+        flex-direction: column; /* Places heading and paragraph vertically. */
+        align-items: flex-start; /* Aligns content left. */
+        gap: 15px; /* Separates the elements. */
+    }
+
+    /* Changes category gallery to one column. */
+    .category-grid {
+        grid-template-columns: 1fr; /* Creates one column. */
+        grid-template-rows: 380px 280px 280px; /* Gives each card a mobile height. */
+    }
+
+    /* Resets the large card row spanning on mobile. */
+    .category-large {
+        grid-row: auto; /* Allows normal one-column flow. */
+    }
+
+    /* Stacks featured product content. */
+    .featured {
+        grid-template-columns: 1fr; /* Creates one column. */
+        padding: 75px 7%; /* Adjusts spacing. */
+        gap: 45px; /* Separates image and text. */
+    }
+
+    /* Adjusts featured image height. */
+    .featured-image {
+        height: 400px; /* Fits mobile screen. */
+    }
+
+    /* Reduces featured stamp size. */
+    .featured-stamp {
+        width: 75px; /* Reduces stamp width. */
+        height: 75px; /* Reduces stamp height. */
+        right: -10px; /* Keeps it closer to the image. */
+    }
+
+    /* Stacks philosophy section. */
+    .philosophy {
+        grid-template-columns: 1fr; /* Creates a single column. */
+    }
+
+    /* Adjusts philosophy image height. */
+    .philosophy-image {
+        min-height: 400px; /* Reduces image height. */
+    }
+
+    /* Reduces philosophy content spacing. */
+    .philosophy-content {
+        padding: 75px 8%; /* Adds mobile padding. */
+    }
+
+    /* Changes journal to a single column. */
+    .journal-grid {
+        grid-template-columns: 1fr; /* Stacks article cards. */
+        gap: 40px; /* Separates articles. */
+    }
+
+    /* Increases journal image height. */
+    .journal-image {
+        height: 300px; /* Improves mobile image presentation. */
+    }
+
+    /* Stacks contact columns. */
+    .contact {
+        grid-template-columns: 1fr; /* Places introduction above form. */
+        padding: 80px 7%; /* Adjusts mobile spacing. */
+        gap: 55px; /* Separates content. */
+    }
+
+    /* Reduces form row spacing. */
+    .input-row {
+        gap: 20px; /* Keeps fields separated. */
+    }
+
+    /* Stacks footer elements. */
+    .footer-top {
+        flex-wrap: wrap; /* Allows items to move to another line. */
+    }
+}
+
+/* Extra-small phone adjustments. */
+@media (max-width: 430px) {
+
+    /* Stacks name and email fields. */
+    .input-row {
+        grid-template-columns: 1fr; /* Creates one input column. */
+    }
+
+    /* Reduces hero heading size. */
+    .hero h1 {
+        font-size: 51px; /* Prevents heading overflow. */
+    }
+
+    /* Reduces hero button size. */
+    .hero-button {
+        padding: 15px 16px; /* Fits smaller screens. */
+        font-size: 8px; /* Reduces button text size. */
+        gap: 12px; /* Reduces arrow spacing. */
+    }
+
+    /* Allows footer details to stack. */
+    .footer-bottom {
+        flex-direction: column; /* Places copyright details vertically. */
+    }
+}
+
+
+/* Creates the full-width manifesto section. */
+.manifesto {
+    background: #e9ded3;
+    padding: 75px 8% 55px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Arranges the top editorial information. */
+.manifesto-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid #cbbab0;
+    padding-bottom: 18px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--burgundy);
+}
+
+/* Controls the main manifesto text area. */
+.manifesto-main {
+    max-width: 950px;
+    padding: 110px 0 90px;
+}
+
+/* Styles the small manifesto label. */
+.manifesto-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--burgundy);
+    margin-bottom: 30px;
+}
+
+/* Styles the oversized manifesto headline. */
+.manifesto-main h2 {
+    font-family: var(--serif);
+    font-size: clamp(45px, 7vw, 88px);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -2px;
+}
+
+/* Styles the second part of the headline. */
+.manifesto-main h2 span {
+    display: block;
+    font-size: 0.68em;
+    color: #88766d;
+    margin-top: 15px;
+}
+
+/* Highlights the final headline phrase. */
+.manifesto-main h2 em {
+    display: block;
+    color: var(--burgundy);
+    font-weight: 400;
+}
+
+/* Styles the manifesto supporting paragraph. */
+.manifesto-description {
+    max-width: 430px;
+    margin: 35px 0 0 auto;
+    color: #776860;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* Creates three equally sized value columns. */
+.manifesto-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid #cbbab0;
+    border-bottom: 1px solid #cbbab0;
+}
+
+/* Styles each individual brand principle. */
+.value-item {
+    padding: 35px 30px 40px 0;
+}
+
+/* Adds separators between the principles. */
+.value-item + .value-item {
+    border-left: 1px solid #cbbab0;
+    padding-left: 30px;
+}
+
+/* Styles the principle numbers. */
+.value-item span {
+    color: var(--burgundy);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* Styles the principle headings. */
+.value-item h3 {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    margin: 20px 0 12px;
+}
+
+/* Styles the principle descriptions. */
+.value-item p {
+    color: #776860;
+    font-size: 12px;
+    max-width: 260px;
+    line-height: 1.8;
+}
+
+/* Creates the closing manifesto line. */
+.manifesto-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--burgundy);
+}
+
+/* Styles the decorative symbol. */
+.manifesto-symbol {
+    font-size: 30px;
+}
+
+/* Adjusts manifesto layout for mobile screens. */
+@media (max-width: 700px) {
+
+    .manifesto {
+        padding: 55px 7% 35px;
+    }
+
+    .manifesto-top {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .manifesto-main {
+        padding: 75px 0 65px;
+    }
+
+    .manifesto-main h2 {
+        font-size: clamp(42px, 10vw, 65px);
+    }
+
+    .manifesto-description {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .manifesto-values {
+        grid-template-columns: 1fr;
+    }
+
+    .value-item {
+        padding: 28px 0;
+    }
+
+    .value-item + .value-item {
+        border-left: none;
+        border-top: 1px solid #cbbab0;
+        padding-left: 0;
+    }
+
+    .manifesto-footer {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+}
